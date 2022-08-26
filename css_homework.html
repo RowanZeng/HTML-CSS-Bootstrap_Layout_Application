@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bs_homework</title>
+        <!-- <link rel="stylesheet" href="reset.css"> -->
+        <link href="./fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+        <!-- reset要先放,但bs原先及有reset設定所以如果有bs就不用另外掛 -->
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous"/>
+        <!-- bootstrap第二-->
+
+        <link rel="stylesheet" href="css_homework_style.css" />
+        <!-- css第三 這樣順序才能用手刻覆蓋掉一些bs有預設的設定 -->
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="col-12 col-md-10 m-auto ">
+                <nav class="d-flex justify-content-between">
+                    <div class="nav_left d-flex">
+                        <span class="pr-2 d-none d-md-block">Menu</span>
+                        <span class="pr-4">
+                            <img src="./images/icon_menu_01.svg" width="18" height="12" alt=""/>
+                        </span>
+                        <span class="pr-2 d-none d-md-block">Login</span>
+                        <span>
+                            <img src="./images/icon_login_01.svg" alt=""/>
+                        </span>
+                    </div>
+                    <div class="nav_logo d-flex justify-content-center">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 212.601 108.92"
+                            width="50"
+                            height="26"
+                        >
+                            <path
+                                d="M138.267 40.793v-4.687h.002C138.269 13.072 125.566 0 109.382 0 90.334 0 77.014 16.963 77.014 39.995c0 24.435 13.07 39.997 32.368 39.997 12.824 0 22.787-7.78 27.764-23.344l-3.361-1.865c-4.11 11.203-10.71 18.674-21.166 18.674-14.191 0-16.185-16.809-16.185-30.661v-2.003zM108.637 4.67c8.464 0 10.208 10.736 10.208 19.607v11.819h-22.41v-4.658c.374-9.961.623-26.768 12.201-26.768z"
+                            ></path>
+                            <path
+                                d="M135.287 73.463h8.962V6.542h-8.962V1.873l26.888-.021v10.603h.25C166.658 4.207 173.507.005 182.22.005c12.574 0 21.416 8.405 21.416 25.679v47.779h8.965v4.67h-35.86v-4.67h8.965V22.57c0-12.138-4.605-15.094-9.709-15.094-6.972 0-13.822 8.402-13.822 21.475v44.51h8.965v4.67h-35.853zM41.509 1.846H0v4.651h8.99v97.737L0 104.23v4.69h35.917v-4.672h-9.01l.026-27.045a31.057 31.057 0 0013.153 2.72c19.05 0 32.344-15.97 32.344-39.861 0-30.666-20.812-38.216-30.921-38.216zm-1.423 73.407c-11.79 0-13.1-14.204-13.192-30.5l.012-38.251h9.214c13.092 0 16.9 14.675 16.9 33.51 0 18.562.015 35.24-12.934 35.24z"
+                            ></path>
+                            <path
+                                d="M32.085 85.144h1.349l.833 4.09h.024l.835-4.09h1.23l.88 4.09h.025l.788-4.09h1.347l-1.463 6.543h-1.348l-.88-4.088h-.022l-.764 4.089H33.57zm9.868 0v6.543h-1.436v-6.542zm-1.436-1.128v-1.372h1.436v1.372zm2.582 2.645v-1.228h.57v-1.779h1.437v1.78h.928v1.227h-.928v3.34c0 .325.264.483.653.483a1.922 1.922 0 00.285-.013v1.276a4.729 4.729 0 01-.821.061c-.937 0-1.553-.36-1.553-1.3V86.66zm4.111 5.027v-8.686h1.44v2.887a2.326 2.326 0 011.565-.863c.882 0 1.337.47 1.337 1.683v4.978h-1.44v-4.81c0-.434-.137-.725-.526-.725-.297 0-.628.304-.936.591v4.945zm8.614 0v-8.686h1.727l2.191 5.148h.024v-5.148h1.439v8.686h-1.508l-2.41-5.606h-.023v5.606zm8.226-4.139v-.36c0-.578.263-.938.846-.938.582 0 .846.36.846.938v.36zm3.13 1.228v-1.529a2.285 2.285 0 00-4.569.098v2.14a2.157 2.157 0 002.285 2.323 2.057 2.057 0 002.285-2.143h-1.439a.805.805 0 01-.846.915c-.48 0-.845-.288-.845-.938v-.866zm.869-3.633h1.348l.835 4.09h.025l.832-4.09h1.231l.881 4.09h.024l.785-4.09h1.35l-1.462 6.543h-1.35l-.876-4.088h-.024l-.765 4.089h-1.348zm13.093-.264h.022l.765 3.512h-1.565zm-1.51 6.807l.446-1.83h2.18l.4 1.83h1.51l-1.987-8.685h-2.022l-2.048 8.686zm4.925-5.026v-1.228h.569v-1.779h1.441v1.78h.925v1.227h-.925v3.34c0 .325.262.483.65.483a1.941 1.941 0 00.288-.013v1.276a4.778 4.778 0 01-.823.061c-.938 0-1.556-.36-1.556-1.3V86.66zm3.953 0v-1.228h.57v-1.779h1.44v1.78h.927v1.227h-.927v3.34c0 .325.263.483.652.483a1.942 1.942 0 00.286-.013v1.276a4.776 4.776 0 01-.824.061c-.938 0-1.554-.36-1.554-1.3V86.66zm5.562-1.517v6.543h-1.438v-6.542zm-1.438-1.128v-1.372h1.438v1.372zm2.639 2.645v-1.228h.573v-1.779h1.437v1.78h.926v1.227h-.926v3.34c0 .325.264.483.653.483a1.916 1.916 0 00.285-.013v1.276a4.765 4.765 0 01-.824.061c-.936 0-1.551-.36-1.551-1.3V86.66zm8.454-1.517v6.543h-1.393v-.746a2.513 2.513 0 01-1.612.867c-.88 0-1.335-.471-1.335-1.684v-4.98h1.44v4.811c0 .434.136.72.524.72.297 0 .629-.3.936-.587v-4.944zm4.251 5.063a1.116 1.116 0 01-.87.469c-.386 0-.707-.264-.707-1.56v-1.4c0-1.296.321-1.564.708-1.564a1.127 1.127 0 01.869.469zm1.438 1.48v-8.685h-1.438v2.744c-.688-.527-1.05-.72-1.44-.72-1.12 0-1.575.914-1.575 2.596v1.588c0 1.682.455 2.598 1.575 2.598a2.023 2.023 0 001.53-.916h.023v.796zm2.638-4.138v-.36c0-.578.264-.938.846-.938s.846.36.846.938v.36zm3.131 1.228v-1.529a2.287 2.287 0 00-4.572.098v2.14a2.158 2.158 0 002.287 2.323 2.058 2.058 0 002.285-2.143h-1.44a.804.804 0 01-.845.915c-.48 0-.846-.288-.846-.938v-.866z"
+                            ></path>
+                        </svg>
+                    </div>
+
+                    <div class="nav_right d-flex justify-content-end">
+                        <span class="pr-2 d-none d-md-block">Search</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                        >
+                            <path
+                                d="M7.006 0A6.797 6.797 0 000 6.69a6.86 6.86 0 007.006 6.69 6.86 6.86 0 007.006-6.69A6.797 6.797 0 007.006 0zm0 12.642c-3.024 0-5.486-2.853-5.486-5.952S3.982.738 7.006.738 12.49 3.59 12.49 6.69s-2.461 5.952-5.485 5.952zm7.949 1.488l-.4-.418a9.694 9.694 0 01-.86-1.1s-.226.297-.432.511c-.206.214-.486.454-.486.454a9.427 9.427 0 011.046.904l.399.42A9.697 9.697 0 0115.08 16s.226-.297.433-.511c.206-.214.486-.455.486-.455a9.421 9.421 0 01-1.045-.904z"
+                            ></path>
+                        </svg>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <!-- 1 banner -->
+            <section>
+                <div class="col-12 col-md-10 m-auto">
+                    <!-- 上面的class=col-12 col-md-10 m-auto 為這個版的container -->
+                    <div class="border border-dark p-3 position-relative">
+                        ​<picture >
+                            <source class="banner_img1" srcset="./images/banner_img_sm.jpg" media="(max-width:992px)">
+                            <img class="w-100" src="./images/banner_img_lg.jpg"  alt="...">
+                        </picture>
+                        <div class="banner_title">
+                            <h4 class="">山田裕貴とルイ・ヴィトンが拓く、新たなる地平</h4>
+                            <ul class="p-0">
+                                <li class="p-tag__item">Watches</li>
+                                <li class="p-tag__item">ルイ・ヴィトン</li>
+                                <li class="p-tag__item">腕 時計</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-row-reverse">
+                        <ul class="nb_items">
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">01</a>
+                            </li>
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">02</a>
+                            </li>
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">03</a>
+                            </li>
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">04</a>
+                            </li>
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">05</a>
+                            </li>
+                            <li class="p-top-kv__nav-button">
+                                <a class="btn" href="">06</a>
+                            </li>
+                            <li class="p-top-kv__nav-next">
+                                <a class="btn" href="">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 2 Latest -->
+            <section class="mt-5">
+                <div class="col-12 col-md-10 m-auto">
+                    <div class="text-center">
+                        <span >
+                            <!-- <img src="/images/icon_line_pc_01.svg" alt="123" width="100" height="50"> -->
+                        </span>
+                        <h1 class="wrap_sub text-center mb-5">Latest</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                    <!-- <p class="">Design</p> -->
+                                    <img class="w-100"
+                                        src="images/section1_img1.png"
+                                        alt="">
+                                </div>
+                                <p class="flex-grow-1" >心の故郷、葛飾は柴又へ『男はつらいよ ビームス篇 寅年』が開催中</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">Design</li>
+                                    <li class="p-tag__item">鈴木修司</li>
+                                    <li class="p-tag__item">Official Columnist</li>
+                                    <li class="p-tag__item">ビームス</li>
+                                    <li class="p-tag__item">銘品</li>
+                                </ul>
+                                <p >2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section1_img2.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">ネイバーフッドとのつながりを生むホテル。ホテルインディゴでのローカル体験が人生の１ページになる</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">ホテル</li>
+                                    <li class="p-tag__item">宿</li>
+                                </ul>
+                                <p >2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3 position-relative">
+                                    <p class="product_img_sub">Food</p>
+                                    <img class="w-100"
+                                        src="images/section1_img3.jpg"
+                                        alt="">
+                                </div>
+                                <p class="flex-grow-1">【2022年最新】京都のホテルで春のアフタヌーンティー14選</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">Food</li>
+                                    <li class="p-tag__item">スイーツ</li>
+                                    <li class="p-tag__item">京都府</li>
+                                </ul>
+                                <p>2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="latest_card  h-100 d-flex flex-column">
+                                <div class="border border-dark p-3 position-relative">
+                                    <img class="w-100"
+                                    src="images/section1_img4.jpeg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">ブランドの本気が垣間見える、2022年新作の複雑機構モデル11選</p>
+                                <ul class="p-0"> 
+                                    <li class="p-tag__item">Watches</li>
+                                    <li class="p-tag__item">2022年春新作腕時計</li>
+                                    <li class="p-tag__item">複雑機構</li>
+                                    <li class="p-tag__item">ウォッチズ＆ワンダーズ</li>
+                                </ul>
+                                <p>2022.04.26</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3 Highlights -->
+            <section class="mt-5">
+                <div class="col-12 col-lg-10 m-auto">
+                    <div class="text-center">
+                        <span >
+                            <!-- <img src="/images/icon_line_pc_01.svg" alt="" width="50" height="30"> -->
+                        </span>
+                        <h1 class="wrap_sub text-center mb-5">Highlights</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section3_img1.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">手作業で染め上げた、鮮やかなプリントシャツ【大人が長く愛せる、パパスのモノ語り】</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">PR</li>
+                                    <li class="p-tag__item">Fashion</li>
+                                </ul>
+                                <p class="flex-grow">2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section3_img2.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">ハワイ州で初！ホテルとレストラン部門ともに5つ星を獲得したラグジュアリーホテル</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">PR</li>
+                                    <li class="p-tag__item">ホテル</li>
+                                    <li class="p-tag__item">宿</li>
+                                </ul>
+                                <p class="flex-grow">2022.04.26</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section3_img3.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">俳優・上杉柊平が語る、ひと味違うDIYの世界 【オズワルドのおうち趣味発見！Vol.2】</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">PR</li>
+                                    <li class="p-tag__item">Art</li>
+                                    <li class="p-tag__item">お笑い</li>
+                                    <li class="p-tag__item">手作り</li>
+                                    <li class="p-tag__item">創造性</li>
+                                </ul>
+                                <p class="flex-grow">2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 d-none d-lg-block">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section3_img4.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">厳選したラグジュアリーアイウェアが揃う「The LUXURY SELECTION by CONTINUER NIHOMBASHI」が開催</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">PR</li>
+                                    <li class="p-tag__item">Fashion</li>
+                                </ul>
+                                <p class="flex-grow">2022.04.26</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 d-none d-lg-block">
+                            <div class="latest_card h-100 d-flex flex-column">
+                                <div class="border border-dark p-3">
+                                <img class="w-100"
+                                    src="images/section3_img5.jpg"
+                                    alt="">
+                                </div>
+                                <p class="flex-grow-1">最近、縮小している部活動。そんな社会課題を解決するために僕ができること</p>
+                                <ul class="p-0">
+                                    <li class="p-tag__item">PR</li>
+                                    <li class="p-tag__item">My Relax Time</li>
+                                </ul>
+                                <p class="flex-grow">2022.04.26</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="d-flex flex-row justify-content-center pt-3">
+                        <a  href="" class="color_blue">View More</a>
+                    </p>
+            </section>
+            <!-- 4 佐久間宣行 -->
+            <section class="mt-5 color_bg_gray">
+                <div class="col-12 col-lg-10 m-auto pt-5">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <figure class="border border-dark bg-light p-3  mb-5">
+                                <img class="w-100" src="images/Section4_img1.jpg" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h3 class="pb-3">佐久間宣行×橋本吉史、名物プロデューサーが見据えるメディアの未来</h3>
+                            <p>テレビとラジオという異なるメディアを主戦場とするふたりのプロデューサー。 既存メディアの枠組みや自身のフィールドを超えて活動する中で見えてきた、 ボーダーレスな時代におけるコンテンツ産業のあり方について語り合った。左：佐久間宣行●1975年、福島県生まれ。テレビプロデューサー。早稲田大学を卒業後、99年にテレビ東京入社。プロデューサーとし...</p>
+                            <p>2021.07.03</p>
+                            <p class="w-50">
+                                <a href="" class="color_blue">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 5 Pen Online Official Columnist -->
+            <section class="mb-2">
+                <div class="section5_col col-12 col-md-10 m-auto">
+                    <div class="section5_card text-center mt-5 border border-5">
+                        <h3 class="pt-5">Pen Online Official Columnist</h3>
+                        <p>各分野で活躍するカルチャーエキスパートたちが、日々専門性のあるコラムを発信。
+                            <br>新時代のクリエイティブはここからキャッチアップ！
+                        </p>
+                        <p>
+                            <a href="" class="color_blue">View more</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- 6 Special -->
+            <section class="mt-5">
+                <div class="col-12 col-md-10 m-auto">
+                    <div class="text-center">
+                        <span >
+                            <!-- <img src="/images/icon_line_pc_01.svg" alt="" width="50" height="30"> -->
+                        </span>
+                        <h1 class="wrap_sub text-center mb-5">Special</h1>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12 col-lg-3">
+                            <div class="special_card">
+                                <a href="https://www.pen-online.jp/special/nespresso/">
+                                    <figure class="border border-dark p-3">
+                                        <img class="w-100" src="images/Section5_img1.jpg" alt="">
+                                    </figure>
+                                    <p>ネスプレッソのコーヒーはどこから来て、どこへ還るのか</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="special_card">
+                                <a href="https://www.pen-online.jp/special/playingregal/">
+                                    <figure class="border border-dark p-3">
+                                        <img class="w-100" src="images/Section5_img2.jpg" alt="">
+                                    </figure>
+                                    <p>playing REGAL 可能性を、遊び尽くせ！</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">                           
+                            <div class="special_card">
+                                <a href="https://www.pen-online.jp/special/gucci_offthegrid/">
+                                    <figure class="border border-dark p-3">
+                                        <img class="w-100" src="images/Section5_img3.jpg" alt="">
+                                    </figure>
+                                    <p>MIYAVIが纏う　グッチ、未来への物語</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 ">
+                            <div class="special_card">
+                                <a href="https://www.pen-online.jp/special/microsoftsurface/">
+                                    <figure class="border border-dark p-3">
+                                        <img class="w-100" src="images/Section5_img4.jpg" alt="">
+                                    </figure>
+                                    <p>直感的操作が可能なSurfaceの先進性</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-5">
+                        <p class="p-icon_arrow  m-auto">
+                            <a href="#top"  class="stt_link">
+                                <span class="icon_arrow">
+                                    <img src="/images/icon_arrow_02.svg" alt="" width="10" height="6">
+                                </span>
+                                Scroll to Top
+                            </a>
+                        </p>
+                    </div>
+                </div>               
+            </section>
+            <!-- footer -->
+            <footer class="color_bg_gray pt-3">
+                <div class="col-12 col-md-10 m-auto">
+                    <div class="footer_inner">
+                        <div class="footer_row row">
+                            <div class=" footer_column">
+                                <ui class="footer_nav">
+                                    <li class="mr-3 text-light">Pen Magazine</li>
+                                    <li class="mr-3 text-light">Official Columnist</li>
+                                    <li class="mr-3 text-light">About</li>
+                                    <li class="mr-3 text-light">Contact</li>
+                                </ui>
+                                <div class="d-flex align-items-center mt-3">
+                                    <span class="pr-2 d-none d-md-block">Login</span>
+                                    <span class="pr-3">
+                                        <img src="./images/icon_login_01.svg" alt=""/>
+                                    </span>
+                                    <span class="pr-2 d-none d-md-block">Search</span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                    >
+                                        <path d="M7.006 0A6.797 6.797 0 000 6.69a6.86 6.86 0 007.006 6.69 6.86 6.86 0 007.006-6.69A6.797 6.797 0 007.006 0zm0 12.642c-3.024 0-5.486-2.853-5.486-5.952S3.982.738 7.006.738 12.49 3.59 12.49 6.69s-2.461 5.952-5.485 5.952zm7.949 1.488l-.4-.418a9.694 9.694 0 01-.86-1.1s-.226.297-.432.511c-.206.214-.486.454-.486.454a9.427 9.427 0 011.046.904l.399.42A9.697 9.697 0 0115.08 16s.226-.297.433-.511c.206-.214.486-.455.486-.455a9.421 9.421 0 01-1.045-.904z"></path>
+                                </div>                                    
+                            </div>
+                            <div class="footer_sns m-sm-3">
+                                <i class="fa-brands fa-twitter mr-1"></i>
+                                <i class="fa-brands fa-facebook mr-1"></i>
+                                <i class="fa-brands fa-instagram mr-1"></i>
+                                <i class="fa-brands fa-youtube mr-1"></i>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="footer_line"></div>
+                                <div >
+                                    <a href="" class="text-light mr-3">ご利用規約</a>
+                                    <a href="" class="text-light">プライバシーポリシー</a>
+                                </div>
+                                <div class="footer_copyright"></div>
+                                <div class="text-light">
+                                    ※当サイトに記載の価格は原則、総額表示です。
+                                </div>
+                                <div class="text-light mb-5">
+                                    © 2021 CCC Media House Co., Ltd.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
